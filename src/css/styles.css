@@ -1,1 +1,131 @@
+/* Common styles */
+@import url('./reset.css');
+@import url('izitoast/dist/css/iziToast.min.css');
+@import url('simplelightbox/dist/simple-lightbox.min.css');
+@import url('./loader.css');
+body {
+  font-family: Montserrat, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+}
+.is-hidden {
+  display: none;
+}
+button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
 
+  background: #4e75ff;
+  font-weight: 500;
+  color: #fff;
+}
+
+button:hover,
+button:focus {
+  background: #6c8cff;
+}
+.container {
+  width: 1400px;
+  padding: 36px 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.search-form {
+  width: 600px;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 32px;
+}
+
+.search-input {
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 371px;
+  height: 40px;
+  padding: 8px 16px;
+  margin-right: 8px;
+  background-color: transparent;
+  outline: transparent;
+}
+
+.search-input:hover {
+  border: 1px solid #000;
+}
+.search-input:focus {
+  border: 1px solid #4e75ff;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1128px;
+  list-style-type: none;
+}
+.gallery-card {
+  width: calc((100% - 48px) / 3);
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  border: 1px solid #808080;
+}
+.gallery-card:hover {
+  transform: scale(1.02); /* Увеличиваем масштаб */
+}
+.gallery-img {
+  width: 100%;
+  height: 152px;
+  object-fit: cover;
+  object-position: center;
+  background: rgba(46, 47, 66, 0.8);
+}
+.img-descr {
+  padding: 4px 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #808080;
+  border-left: 1px solid #808080;
+  border-right: 1px solid #808080;
+  height: 48px;
+}
+
+.img-descr-title {
+  font-weight: 600;
+  line-height: 1.33;
+  font-size: 12px;
+}
+
+.img-descr-points {
+  text-align: center;
+  font-size: 12px;
+  line-height: 2;
+}
+/* for lightbox */
+.has-lightbox .sl-wrapper .sl-navigation button {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+.has-lightbox .sl-wrapper .sl-counter {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+.has-lightbox .sl-wrapper .sl-close {
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+.simple-lightbox {
+  background: rgba(46, 47, 66, 0.8);
+}
