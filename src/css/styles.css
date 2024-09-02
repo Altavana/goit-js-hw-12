@@ -46,7 +46,7 @@ button:focus {
 }
 
 .search-form {
-  width: 600px;
+  max-width: 375px;
   display: flex;
   margin: 0 auto;
   margin-bottom: 32px;
