@@ -14,9 +14,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ffffff;
 }
-.is-hidden {
-  display: none;
-}
+
 button {
   border-radius: 8px;
   padding: 8px 16px;
@@ -32,13 +30,19 @@ button:hover,
 button:focus {
   background: #6c8cff;
 }
-.container {
-  width: 1400px;
-  padding: 36px 0;
-  padding-left: 15px;
-  padding-right: 15px;
+.load-btn {
+  width: 125px;
+  display: block;
   margin-right: auto;
   margin-left: auto;
+}
+.is-hidden {
+  display: none;
+}
+.container {
+  max-width: 1400px;
+  padding: 36px 15px;
+  margin: 0 auto;
 }
 
 .search-form {
@@ -75,6 +79,7 @@ button:focus {
   gap: 24px;
   max-width: 1128px;
   list-style-type: none;
+  margin-bottom: 32px;
 }
 .gallery-card {
   width: calc((100% - 48px) / 3);
@@ -128,4 +133,7 @@ button:focus {
 }
 .simple-lightbox {
   background: rgba(46, 47, 66, 0.8);
+}
+.is-hidden {
+  display: none;
 }
