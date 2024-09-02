@@ -26,7 +26,21 @@ const onSearchFormSubmit = async event => {
   try {
     event.preventDefault();
     loaderEl.classList.remove('is-hidden');
-    searchQuery = searchFormEl.elements.picture_query.value;
+    searchQuery = searchFormEl.elements.picture_query.value.trim();
+    if (!searchQuery) {
+      iziToast.error({
+        message: 'Please enter what you are looking for',
+        color: '#EF4040',
+        position: 'topRight',
+        iconUrl: imgUrl,
+        iconColor: 'white',
+        messageColor: 'white',
+        timeout: 3000,
+        titleColor: 'white',
+      });
+      return;
+    }
+
     // all new query starts with page 1
     pageGallery = 1;
     const response = await fetchGallery(searchQuery, pageGallery, limit);
@@ -39,11 +53,11 @@ const onSearchFormSubmit = async event => {
         iconUrl: imgUrl,
         iconColor: 'white',
         messageColor: 'white',
-        timeout: 4000,
+        timeout: 3000,
         titleColor: 'white',
-        progressBar: 'false',
       });
 
+      loadBtn.classList.add('is-hidden');
       galleryEl.innerHTML = '';
       searchFormEl.reset();
       return;
@@ -70,15 +84,15 @@ const onSearchFormSubmit = async event => {
         iconUrl: imgUrl,
         iconColor: 'white',
         messageColor: 'white',
-        timeout: 4000,
+        timeout: 3000,
         titleColor: 'white',
-        progressBar: 'false',
       });
     }
   } catch (error) {
     console.log(error);
   } finally {
     loaderEl.classList.add('is-hidden');
+    searchFormEl.reset();
   }
 };
 
@@ -108,9 +122,8 @@ const onLoadBtnClick = async event => {
         iconUrl: imgUrl,
         iconColor: 'white',
         messageColor: 'white',
-        timeout: 4000,
+        timeout: 3000,
         titleColor: 'white',
-        progressBar: 'false',
       });
     }
   } catch (error) {
